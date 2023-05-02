@@ -20,7 +20,7 @@ const cartControler = (async(req, res)=>{
             }
         }
         else{
-        const createCart = await Cart.create({productId:req.params.id, customerId: req.user})
+        const createCart = await Cart.create({productId:req.params.id, customerId: req.user, product : findProduct , quantity , totalAmount})
         res.status(200).json(createCart) 
         }       
     } catch (error) {
